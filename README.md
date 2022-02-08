@@ -41,6 +41,10 @@ environment. You might have custom ssh keys for connecting to development or pro
 specific tools you need to use to be able to do your work. You would be able to add this configuration and installation
 files to a separate git repository.
 
+Feel free to name the additional `.dotfiles-custom` directories to your wishes. Inside the `$HOME/.dotfiles/zsh/.zshrc`
+configuration, directories starting with `.dotfiles-` are being scanned to source shell configuration, aliases and
+exports from.
+
 ## ssh
 
 To make sure all separate SSH configuration files will be included, an `Include` property has been added to the general
