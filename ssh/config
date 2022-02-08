@@ -3,5 +3,6 @@ IgnoreUnknown AddKeysToAgent,UseKeychain
 Host *
  AddKeysToAgent yes
  UseKeychain yes
+ IdentitiesOnly yes
 
-Include $HOME/.ssh/config.d/*
+Include config.d/**

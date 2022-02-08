@@ -47,9 +47,9 @@ exports from.
 
 ## ssh
 
-To make sure all separate SSH configuration files will be included, an `Include` property has been added to the general
-`$HOME/.zsh/config` which loads configuration files symlinked to the `$HOME/.ssh/config.d/` directory created by the
-installation script.
+To make sure all separate ssh configuration files will be included, an `Include` option has been added to
+`$HOME/.zsh/config`. This `Include` option loads configuration files that are symlinked to the `$HOME/.ssh/config.d/`
+directory. This directory is being created by the ssh installation script.
 
 ## git
 
