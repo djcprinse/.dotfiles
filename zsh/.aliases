@@ -1,0 +1,110 @@
+# ---------------------------------
+# Common
+# ---------------------------------
+
+alias home='cd ~'
+alias ls='ls -lah'
+
+
+# ---------------------------------
+# Composer
+# ---------------------------------
+
+alias c="composer"
+alias c1="composer self-update --1"
+alias c2="composer self-update --2"
+alias ci="composer install"
+alias cid="composer install --prefer-dist"
+alias cii="composer install --ignore-platform-reqs"
+alias cis="composer install --prefer-source"
+alias cu="composer update"
+alias cl="composer update --lock"
+alias cr="composer require"
+alias cdao="composer dump-autoload -o"
+
+
+# ---------------------------------
+# ddev
+# ---------------------------------
+
+alias ddci="ddev composer install"
+alias ddcu="ddev composer update"
+alias ddcl="ddev composer update --lock"
+alias ddcr="ddev composer require"
+alias ddcdao="ddev composer dump-autoload -o"
+
+
+# ---------------------------------
+# Git
+# ---------------------------------
+
+alias g="git"
+alias gc="git checkout"
+alias gco="git checkout"
+alias gcl="git clone"
+alias gf="git fetch"
+alias gi="git init"
+alias gs="git status"
+alias gstat="git status"
+alias gaa="git add -A"
+alias gp="git pull"
+alias gpo="git pull origin"
+alias gpom="git pull origin master"
+alias gpor="git pull origin release"
+alias gpod="git pull origin development"
+alias gcd="git fetch && git checkout development && git pull"
+alias gpu="git push"
+alias gpuo="git push origin"
+alias gcm="git commit -m"
+alias gd="git diff"
+alias gst="git stash"
+alias gsta="git stash apply"
+alias gclean="git branch --merged | grep -i -v -E 'main|master|release|development' | xargs git branch -d"
+alias gres="git reset --hard"
+
+
+# ---------------------------------
+# SSH
+# ---------------------------------
+
+alias ssha="ssh-add"
+alias sshaa="ssha --apple-load-keychain"
+
+
+# ---------------------------------
+# Vim
+# ---------------------------------
+
+alias zshrc="vim $HOME/.zshrc"
+alias aliases="vim $HOME/.dotfiles/zsh/.aliases"
+alias exports="vim $HOME/.dotfiles/zsh/.exports"
+alias hosts="sudo vim /etc/hosts"
+alias khosts="sudo vim $HOME/.ssh/known_hosts"
+
+
+# ---------------------------------
+# Networking
+# ---------------------------------
+
+alias ipv4="curl -4 https://icanhazip.com"
+alias ipv6="curl -6 https://canhazip.com"
+
+
+# ---------------------------------
+# macOS
+# ---------------------------------
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Lock the screen
+alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
+
+
+# ---------------------------------
+# Linux / Pop!_OS
+# ---------------------------------
+
+alias aptup="sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get autoremove"
+alias popup="aptup"
