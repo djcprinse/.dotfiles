@@ -15,5 +15,5 @@ mv $HOME/.gitconfig $HOME/.gitconfig.bak
 echo 'Create .gitconfig'
 touch $HOME/.gitconfig
 echo '[include]' >> $HOME/.gitconfig
-echo "path = $HOME/.dotfiles/git/.gitconfig" >> $HOME/.gitconfig
+echo 'path = ~/.dotfiles/git/.gitconfig' >> $HOME/.gitconfig
 echo >> $HOME/.gitconfig
