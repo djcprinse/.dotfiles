@@ -1,6 +1,6 @@
 [core]
     autocrlf = input
-    excludesfile = $HOME/.gitignore
+    excludesfile = ~/.gitignore
     ignorecase = false
 [pull]
     rebase = false
