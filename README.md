@@ -53,7 +53,21 @@ directory. This directory is being created by the ssh installation script.
 
 ## git
 
-TODO: Make sure git configuration is loaded from the custom `.dotfiles` directories.
+To make sure all separate git configuration files will be included, a `.gitignore` will be created on setup which
+includes `~/.dotfiles/git/.gitignore_global`. In your `.dotfiles-custom` directory, you can add a custom `.gitconfig`
+and write this to the global `.gitconfig` using the snippet below.
+
+```
+echo '[include]' >> $HOME/.gitconfig
+echo "path = $HOME/.dotfiles-custom/git/.gitconfig" >> $HOME/.gitconfig
+echo >> $HOME/.gitconfig
+```
+
+This will append the `include` option to the `.gitconfig` which makes sure that the correct git configuration will be
+used for a repository.
+
+**Note:** You might need to add some configuration specifically for the `.dotfiles` repositories because these might be
+out of scope with any of the included configuration files.
 
 ## Questions
 
