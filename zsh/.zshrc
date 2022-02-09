@@ -2,7 +2,7 @@ ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$ZSH/custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(brew composer docker docker-compose git history macos node npm rsync sudo tmux zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(brew composer docker docker-compose git macos node npm rsync sudo tmux zsh-completions zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
 
 source "$ZSH/oh-my-zsh.sh"
 
