@@ -32,6 +32,8 @@ alias ddcu="ddev composer update"
 alias ddcl="ddev composer update --lock"
 alias ddcr="ddev composer require"
 alias ddcdao="ddev composer dump-autoload -o"
+alias ddxd="ddev xdebug"
+alias ddxdo="ddev xdebug off"
 
 
 # ---------------------------------
