@@ -5,31 +5,31 @@
 # -----------------------------------------------
 
 echo 'Installing iTerm2'
-brew install iterm2
+brew install --cask iterm2
 
 echo 'Installing Firefox'
-brew install firefox
+brew install --cask firefox
 
 echo 'Installing Spotify'
-brew install spotify
+brew install --cask spotify
 
 echo 'Installing Visual Studio Code'
-brew install visual-studio-code
+brew install --cask visual-studio-code
 
 echo 'Installing PhpStorm'
-brew install phpstorm
+brew install --cask phpstorm
 
 echo 'Installing Cyberduck'
-brew install cyberduck
+brew install --cask cyberduck
 
 echo 'Installing Rectangle'
-brew install rectangle
+brew install --cask rectangle
 
 echo 'Installing Clipy'
-brew install clipy
+brew install --cask clipy
 
 echo 'Installing Sensible Side Buttons'
-brew install sensiblesidebuttons
+brew install --cask sensiblesidebuttons
 
 echo 'Installing SmoothScroll'
-brew install smoothscroll
+brew install --cask smoothscroll

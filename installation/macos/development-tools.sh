@@ -35,8 +35,8 @@ brew install phpmd
 echo 'Installing composer'
 brew install composer
 
-echo 'Installing Docker'
-brew install homebrew/cask/docker
+echo 'Installing docker'
+brew install --cask docker
 
 echo 'Installing ddev'
 brew tap drud/ddev
