@@ -13,8 +13,8 @@ fi
 
 if [[ $OSTYPE == 'linux-gnu'* ]]; then
   echo
-  echo 'Linux detected. Right now, Linux is unsupported for automated bootstrap.'
-  exit 0;
+  echo 'Linux detected. Right now, Linux supported is minimal for automated bootstrap.'
+  ./bootstrap-linux.sh
 elif [[ $OSTYPE == 'darwin'* ]]; then
   echo
   echo 'macOS detected.'

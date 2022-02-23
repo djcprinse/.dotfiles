@@ -2,7 +2,7 @@
 
 if ! brew --help &> /dev/null; then
   echo 'brew not installed. Trying to install.'
-  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   if ! "$?" -eq 0; then
     echo "Something went wrong. Exiting..." && exit 1

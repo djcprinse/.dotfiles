@@ -2,22 +2,22 @@
 
 echo
 echo '#######################'
-echo '### macOS bootstrap ###'
+echo '### linux bootstrap ###'
 echo '#######################'
 
 ./generic/terminal.sh
 ./generic/ssh.sh
 ./generic/git.sh
-./macos/xcode-select.sh
 ./generic/brew.sh
-./macos/development-tools.sh
-./macos/applications.sh
+./linux/development-tools.sh
+./linux/applications.sh
 
 echo '#######################'
-echo 'Ready setting up macOS!'
+echo 'Ready setting up linux!'
 echo 'Things to do to make the powerlevel10k theme work"'
 echo '1. Install the recommended font as stated at https://github.com/romkatv/powerlevel10k#fonts'
-echo '2. Set iTerm2 configuration included in $HOME/.dotfiles/iterm'
+echo '2. Set the terminal configuration to use the fonts'
+echo '3. Adjust the theme colors to match the iTerm2 Smoooooth theme at https://github.com/eendroroy/alacritty-theme/blob/master/themes/smoooooth.yml'
 
 echo '#######################'
 echo 'Optional goodies'
