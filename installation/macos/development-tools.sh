@@ -27,13 +27,17 @@ brew link --overwrite --force php@7.4
 #brew install php@7.0
 #brew install php@5.6
 
-echo 'Installing php tools'
-brew install php-code-sniffer
-brew install php-cs-fixer
-brew install phpmd
-
 echo 'Installing composer'
-brew install composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+mv composer.phar /usr/local/bin/composer
+
+echo 'Installing php tools'
+composer global require "squizlabs/php_codesniffer"
+composer global require "friendsofphp/php-cs-fixer"
+composer global require "phpmd/phpmd"
 
 echo 'Installing docker'
 brew install --cask docker
@@ -42,16 +46,17 @@ echo 'Installing ddev'
 brew tap drud/ddev
 brew install ddev
 
+echo 'Installing node'
 # TODO Make installing node interactive so you can decide what version to install
 #brew install node
-#brew install node@10
-#brew install node@12
-echo 'Installing node'
+#brew install node@16
 brew install node@14
 brew link --overwrite --force node@14
-
-echo 'Installing openssl@1.1'
-brew install openssl@1.1
+#brew install node@12
+#brew install node@10
 
 echo 'Installing tmux'
 brew install tmux
+
+echo 'Installing openssl@1.1'
+brew install openssl@1.1
