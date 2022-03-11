@@ -11,8 +11,6 @@ alias ls='ls -lah'
 # ---------------------------------
 
 alias c="composer"
-alias c1="composer self-update --1"
-alias c2="composer self-update --2"
 alias ci="composer install"
 alias cid="composer install --prefer-dist"
 alias cii="composer install --ignore-platform-reqs"
@@ -22,6 +20,15 @@ alias cl="composer update --lock"
 alias cr="composer require"
 alias cdao="composer dump-autoload -o"
 
+alias c1="composer1"
+alias c1i="composer1 install"
+alias c1id="composer1 install --prefer-dist"
+alias c1ii="composer1 install --ignore-platform-reqs"
+alias c1is="composer1 install --prefer-source"
+alias c1u="composer1 update"
+alias c1l="composer1 update --lock"
+alias c1r="composer1 require"
+alias c1dao="composer1 dump-autoload -o"
 
 # ---------------------------------
 # ddev
