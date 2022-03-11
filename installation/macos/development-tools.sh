@@ -27,12 +27,21 @@ brew link --overwrite --force php@7.4
 #brew install php@7.0
 #brew install php@5.6
 
-echo 'Installing composer'
+echo 'Installing composer v2'
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
+php composer-setup.php --install-dir=/usr/local/bin
 php -r "unlink('composer-setup.php');"
-mv composer.phar /usr/local/bin/composer
+
+read -p 'Do you want to install composer v1? (y/n) [y]? ' CONT
+CONT=${CONT:-'y'}
+if [[ $CONT != 'y' ]]; then
+  echo 'Installing composer v1'
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  php composer-setup.php --install-dir=/usr/local/bin --filename=composer1 --version=1.10.25
+  php -r "unlink('composer-setup.php');"
+fi
 
 echo 'Installing php tools'
 composer global require "squizlabs/php_codesniffer"
