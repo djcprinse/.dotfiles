@@ -91,7 +91,8 @@ alias gres="git reset --hard"
 # ---------------------------------
 
 alias ssha="ssh-add"
-alias sshaa="ssha --apple-load-keychain"
+alias sshag="ssh-add ~/.ssh/github/id_ed25519"
+alias sshagl="ssh-add ~/.ssh/gitlab/id_ed25519"
 
 
 # ---------------------------------
