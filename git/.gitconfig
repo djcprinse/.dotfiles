@@ -2,5 +2,7 @@
     autocrlf = input
     excludesfile = ~/.gitignore
     ignorecase = false
+[push]
+    autoSetupRemote = true
 [pull]
     rebase = false
