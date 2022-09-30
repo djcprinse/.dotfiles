@@ -5,9 +5,12 @@
 # ---------------------------------------------
 
 echo 'Creating ssh directory'
-mkdir $HOME/.ssh/
-mkdir $HOME/.ssh/config.d/
+if [ ! -d "${HOME}/.ssh/config.d/" ]; then
+  mkdir -p "${HOME}/.ssh/config.d/"
+fi
 
 echo 'Symlink ssh configuration'
-rm $HOME/.ssh/config
-ln -s $HOME/.dotfiles/ssh/config $HOME/.ssh/config
+if [ -f "${HOME}/.ssh/config" ]; then
+  rm "${HOME}/.ssh/config"
+fi
+ln -s "${HOME}/.dotfiles/ssh/config" "${HOME}/.ssh/config"

@@ -1,23 +1,35 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+
 echo
 echo '#######################'
 echo '### macOS bootstrap ###'
 echo '#######################'
 
-./generic/terminal.sh
-./generic/ssh.sh
-./generic/git.sh
-./macos/xcode-select.sh
-./generic/brew.sh
-./macos/development-tools.sh
-./macos/applications.sh
+"${SCRIPT_DIR}/generic/terminal.sh"
+"${SCRIPT_DIR}/generic/ssh.sh"
+"${SCRIPT_DIR}/generic/git.sh"
+"${SCRIPT_DIR}/macos/xcode-select.sh"
+"${SCRIPT_DIR}/macos/brew.sh"
+
+read -r -p 'Do you want to install development tools? (y/n) [y]? ' CONT
+CONT=${CONT:-'y'}
+if [[ "${CONT}" = 'y' ]]; then
+  "${SCRIPT_DIR}/macos/development-tools.sh"
+fi
+
+read -r -p 'Do you want to install applications? (y/n) [y]? ' CONT
+CONT=${CONT:-'y'}
+if [[ "${CONT}" = 'y' ]]; then
+  "${SCRIPT_DIR}/macos/applications.sh"
+fi
 
 echo '#######################'
 echo 'Ready setting up macOS!'
 echo 'Things to do to make the powerlevel10k theme work"'
 echo '1. Install the recommended font as stated at https://github.com/romkatv/powerlevel10k#fonts'
-echo '2. Set iTerm2 configuration included in $HOME/.dotfiles/iterm'
+echo "2. Set iTerm2 configuration included in ${HOME}/.dotfiles/iterm"
 
 echo '#######################'
 echo 'Optional goodies'

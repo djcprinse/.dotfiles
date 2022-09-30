@@ -4,17 +4,17 @@ This repository contains basic configuration for your shell (zsh), ssh, git and 
 
 ## Installation
 
-You can install and start using this `.dotfiles` configuration by cloning this repository to your `$HOME` directory.
+You can install and start using this `.dotfiles` configuration by cloning this repository to your `${HOME}` directory.
 
 ```shell
-git clone git@github.com:djcprinse/.dotfiles.git $HOME/.dotfiles/
+git clone git@github.com:djcprinse/.dotfiles.git ${HOME}/.dotfiles/
 ```
 
 After cloning, `cd` into the `.dotfiles/installation` directory and run the `.installation.sh` script using the
 following command.
 
 ```shell
-cd $HOME/.dotfiles/installation/ && install.sh
+cd ${HOME}/.dotfiles/installation/ && install.sh
 ```
 
 The installation script will set up the shell, ssh and git configuration, install xcode-select and (home)brew and some
@@ -41,14 +41,14 @@ environment. You might have custom ssh keys for connecting to development or pro
 specific tools you need to use to be able to do your work. You would be able to add this configuration and installation
 files to a separate git repository.
 
-Feel free to name the additional `.dotfiles-custom` repository to your wishes. Inside the `$HOME/.dotfiles/zsh/.zshrc`
+Feel free to name the additional `.dotfiles-custom` repository to your wishes. Inside the `${HOME}/.dotfiles/zsh/.zshrc`
 configuration, directories starting with `.dotfiles-` are being scanned to source shell configuration, aliases and
 exports from.
 
 ## ssh
 
 To make sure all separate ssh configuration files will be included, an `Include` option has been added to
-`$HOME/.zsh/config`. This `Include` option loads configuration files that are symlinked to the `$HOME/.ssh/config.d/`
+`${HOME}/.zsh/config`. This `Include` option loads configuration files that are symlinked to the `${HOME}/.ssh/config.d/`
 directory. This directory is being created by the ssh installation script.
 
 ## git
@@ -58,9 +58,11 @@ includes `~/.dotfiles/git/.gitignore_global`. In your `.dotfiles-custom` directo
 and write this to the global `.gitconfig` using the snippet below.
 
 ```shell
-echo '[include]' >> $HOME/.gitconfig
-echo 'path = ~/.dotfiles-custom/git/.gitconfig' >> $HOME/.gitconfig
-echo >> $HOME/.gitconfig
+{
+    echo '[include]'
+    echo 'path = ~/.dotfiles-custom/git/.gitconfig'
+    echo
+} >> ${HOME}/.gitconfig
 ```
 
 This will append the `include` option to the `.gitconfig` which makes sure that the correct git configuration will be

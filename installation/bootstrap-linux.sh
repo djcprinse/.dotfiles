@@ -1,16 +1,27 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+
 echo
 echo '#######################'
 echo '### linux bootstrap ###'
 echo '#######################'
 
-./generic/terminal.sh
-./generic/ssh.sh
-./generic/git.sh
-./generic/brew.sh
-./linux/development-tools.sh
-./linux/applications.sh
+"${SCRIPT_DIR}/generic/terminal.sh"
+"${SCRIPT_DIR}/generic/ssh.sh"
+"${SCRIPT_DIR}/generic/git.sh"
+
+read -r -p 'Do you want to install development tools? (y/n) [y]? ' CONT
+CONT=${CONT:-'y'}
+if [[ "${CONT}" = 'y' ]]; then
+  "${SCRIPT_DIR}/linux/development-tools.sh"
+fi
+
+read -r -p 'Do you want to install applications? (y/n) [y]? ' CONT
+CONT=${CONT:-'y'}
+if [[ "${CONT}" = 'y' ]]; then
+  "${SCRIPT_DIR}/linux/applications.sh"
+fi
 
 echo '#######################'
 echo 'Ready setting up linux!'
