@@ -1,0 +1,20 @@
+# Ignore everything by default
+*
+
+!/git/.gitconfig
+!/git/.gitignore
+
+!/installation
+!/installation/*.sh
+!/installation/generic/*.sh
+!/installation/linux/*.sh
+!/installation/macos/*.sh
+
+!/iterm/com.googlecode.iterm2.plist
+
+!/ssh/config
+
+!/zsh/.aliases
+!/zsh/.exports
+!/zsh/.zshrc
+!/zsh/p10k-lean.zsh
