@@ -1,38 +1,21 @@
 # ---------------------------------
-# Paths
-# ---------------------------------
-
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/bin/pstorm:$PATH"
-
-
-# ---------------------------------
 # Settings
 # ---------------------------------
 
-# Set vim as default editor
-export EDITOR="vim"
-
 # Set larger shell history
-export HISTSIZE=32768
-export SAVEHIST=$HISTSIZE
+export HISTFILE="${XDG_CACHE_HOME}/zsh/.history"
+export HISTSIZE=50000
+export SAVEHIST=${HISTSIZE}
 
 # The meaning of these options can be found in man page of `zshoptions`.
 setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt INC_APPEND_HISTORY_TIME
 setopt EXTENDED_HISTORY
 
 # Make some commands not show up in history
 export HISTORY_IGNORE="(ls|cd|cd -|pwd|exit|date|* --help)"
-
-# Prefer US English and use UTF-8
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
 
 # Ignore composer memory limit to prevent memory issues with Composer v1
 export COMPOSER_MEMORY_LIMIT=-1

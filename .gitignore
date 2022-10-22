@@ -17,5 +17,7 @@
 
 !/zsh/.aliases
 !/zsh/.exports
+!/zsh/.zprofile
+!/zsh/.zshenv
 !/zsh/.zshrc
 !/zsh/p10k-lean.zsh
