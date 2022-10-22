@@ -14,3 +14,4 @@ if [ -f "${HOME}/.ssh/config" ]; then
   rm "${HOME}/.ssh/config"
 fi
 ln -s "${HOME}/.dotfiles/ssh/config" "${HOME}/.ssh/config"
+chmod 600 "${HOME}/.ssh/config"
