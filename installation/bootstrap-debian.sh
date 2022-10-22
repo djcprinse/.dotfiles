@@ -1,30 +1,30 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
 echo
-echo '#######################'
-echo '### linux bootstrap ###'
-echo '#######################'
+echo '########################'
+echo '### debian bootstrap ###'
+echo '########################'
 
-"${SCRIPT_DIR}/generic/terminal.sh"
-"${SCRIPT_DIR}/generic/ssh.sh"
-"${SCRIPT_DIR}/generic/git.sh"
+"${script_dir}/generic/terminal.sh"
+"${script_dir}/generic/ssh.sh"
+"${script_dir}/generic/git.sh"
 
 read -r -p 'Do you want to install development tools? (y/n) [y]? ' CONT
 CONT=${CONT:-'y'}
 if [[ "${CONT}" = 'y' ]]; then
-  "${SCRIPT_DIR}/linux/development-tools.sh"
+  "${script_dir}/debian/development-tools.sh"
 fi
 
 read -r -p 'Do you want to install applications? (y/n) [y]? ' CONT
 CONT=${CONT:-'y'}
 if [[ "${CONT}" = 'y' ]]; then
-  "${SCRIPT_DIR}/linux/applications.sh"
+  "${script_dir}/debian/applications.sh"
 fi
 
 echo '#######################'
-echo 'Ready setting up linux!'
+echo 'Ready setting up debian!'
 echo 'Things to do to make the powerlevel10k theme work"'
 echo '1. Install the recommended font as stated at https://github.com/romkatv/powerlevel10k#fonts'
 echo '2. Set the terminal configuration to use the fonts'

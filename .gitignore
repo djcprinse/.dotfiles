@@ -6,8 +6,9 @@
 
 !/installation
 !/installation/*.sh
+!/installation/debian/*.sh
+!/installation/fedora/*.sh
 !/installation/generic/*.sh
-!/installation/linux/*.sh
 !/installation/macos/*.sh
 
 !/iterm/com.googlecode.iterm2.plist

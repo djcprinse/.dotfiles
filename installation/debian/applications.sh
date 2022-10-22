@@ -23,6 +23,6 @@ sudo apt-get update
 sudo apt-get install -y code
 
 echo 'Installing PhpStorm'
-curl -fsSLO https://download.jetbrains.com/webide/PhpStorm-2021.3.2.tar.gz
+curl -fsSLO https://download.jetbrains.com/webide/PhpStorm-2022.2.3.tar.gz
 sudo tar -xzf PhpStorm-*.tar.gz -C /opt
 rm -f PhpStorm-*.tar.gz

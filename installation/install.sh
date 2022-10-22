@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
 echo '###########################'
 echo '### .dotfiles installer ###'
@@ -13,16 +13,33 @@ if [[ "${CONT}" != 'y' ]]; then
   exit 0;
 fi
 
-if [[ ${OSTYPE} == 'linux-gnu'* ]]; then
-  echo
-  echo 'Linux detected. Right now, Linux supported is minimal for automated bootstrap.'
-  "${SCRIPT_DIR}/bootstrap-linux.sh"
-elif [[ ${OSTYPE} == 'darwin'* ]]; then
-  echo
-  echo 'macOS detected.'
-  "${SCRIPT_DIR}/bootstrap-macos.sh"
-else
-  echo
-  echo 'We have detected an unsupported OS for automated bootstrap. Aborting.'
-  exit 0;
-fi
+case $(uname -s) in
+  'Linux'*)
+    echo
+    echo 'Linux detected. Right now, Linux supported is minimal for automated bootstrap.'
+
+    if [ "$(grep -Ei 'redhat|fedora' /etc/*release)" ]; then
+      echo
+      echo 'fedora based distribution detected.'
+      "${script_dir}/bootstrap-fedora.sh"
+    if [ "$(grep -Ei 'debian|buntu' /etc/*release)" ]; then
+      echo
+      echo 'debian based distribution detected.'
+      "${script_dir}/bootstrap-debian.sh"
+    else
+      echo
+      echo 'Unsupported linux based distribution detected. Aborting.'
+      exit 0;
+    fi
+    ;;
+  'Darwin'*)
+    echo
+    echo 'macOS detected.'
+    "${script_dir}/bootstrap-macos.sh"
+    ;;
+  *)
+    echo
+    echo 'We have detected an unsupported OS for automated bootstrap. Aborting.'
+    exit 0;
+    ;;
+esac
