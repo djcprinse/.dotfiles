@@ -23,7 +23,7 @@ if [[ "${CONT}" = 'y' ]]; then
   "${script_dir}/debian/applications.sh"
 fi
 
-echo '#######################'
+echo '########################'
 echo 'Ready setting up debian!'
 echo 'Things to do to make the powerlevel10k theme work"'
 echo '1. Install the recommended font as stated at https://github.com/romkatv/powerlevel10k#fonts'
