@@ -30,8 +30,8 @@ echo '1. Install the recommended font as stated at https://github.com/romkatv/po
 echo '2. Set the terminal configuration to use the fonts'
 echo '3. Adjust the theme colors to match the iTerm2 Smoooooth theme at https://github.com/eendroroy/alacritty-theme/blob/master/themes/smoooooth.yml'
 
-echo '#######################'
+echo '########################'
 echo 'Optional goodies'
 
 echo '1. Create an optional .dotfiles-* configuration for personal or work configuration'
-echo '#######################'
+echo '########################'
