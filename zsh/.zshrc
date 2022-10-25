@@ -24,6 +24,6 @@ done
 unset file
 
 # Load p10k-lean zsh configuration
-source "$HOME/.dotfiles/zsh/p10k-lean.zsh"
+source "${HOME}/.dotfiles/zsh/p10k-lean.zsh"
 
 autoload -U compinit && compinit -d ${ZSH_COMPDUMP}
