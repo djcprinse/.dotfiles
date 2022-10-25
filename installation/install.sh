@@ -22,7 +22,7 @@ case $(uname -s) in
       echo
       echo 'fedora based distribution detected.'
       "${script_dir}/bootstrap-fedora.sh"
-    if [ "$(grep -Ei 'debian|buntu' /etc/*release)" ]; then
+    elif [ "$(grep -Ei 'debian|buntu' /etc/*release)" ]; then
       echo
       echo 'debian based distribution detected.'
       "${script_dir}/bootstrap-debian.sh"
