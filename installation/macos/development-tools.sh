@@ -8,7 +8,7 @@ brew_packages_optional='htop jq rsync shellcheck unzip openssl'
 # -----------------------------------------------
 
 echo 'Installing packages'
-brew install ${brew_packages} ${brew_packages_optional}
+brew install "${brew_packages}" "${brew_packages_optional}"
 
 echo 'Installing php'
 brew tap shivammathur/php

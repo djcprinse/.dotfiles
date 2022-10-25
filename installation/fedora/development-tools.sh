@@ -8,7 +8,7 @@ dnf_packages_optional='htop jq rsync shellcheck unzip php-cli'
 # -----------------------------------------------
 
 echo 'Installing packages'
-sudo dnf install -y ${dnf_packages} ${dnf_packages_optional}
+sudo dnf install -y "${dnf_packages}" "${dnf_packages_optional}"
 
 echo 'Changing default shell to zsh'
 sudo chsh -s /usr/bin/zsh
