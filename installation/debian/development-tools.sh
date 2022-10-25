@@ -8,7 +8,7 @@ apt_packages_optional='htop jq rsync shellcheck unzip php-cli'
 # -----------------------------------------------
 
 echo 'Installing packages'
-sudo dnf install -y ${apt_packages} ${apt_packages_optional}
+sudo apt-get update && apt-get install -y ${apt_packages} ${apt_packages_optional}
 
 echo 'Changing default shell to zsh'
 sudo chsh -s /usr/bin/zsh
