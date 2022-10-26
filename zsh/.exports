@@ -18,7 +18,7 @@ setopt BANG_HIST
 setopt EXTENDED_HISTORY
 
 # Make some commands not show up in history
-export HISTORY_IGNORE="(ls|ls *|cd|cd *|pwd|exit|date|* --help)"
+export HISTORY_IGNORE="(ls|ls *|pwd|exit|date|* --help)"
 
 # Ignore composer memory limit to prevent memory issues with Composer v1
 export COMPOSER_MEMORY_LIMIT=-1
