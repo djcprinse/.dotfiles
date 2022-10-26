@@ -4,14 +4,16 @@
 # Configure SSH configuration
 # ---------------------------------------------
 
-echo 'Creating ssh directory'
 if [ ! -d "${HOME}/.ssh/config.d/" ]; then
+  echo 'Creating ssh directory'
   mkdir -p "${HOME}/.ssh/config.d/"
 fi
 
-echo 'Symlink ssh configuration'
-if [ -f "${HOME}/.ssh/config" ]; then
-  rm "${HOME}/.ssh/config"
+if [ -d "${HOME}/.ssh/config" ] || { [ -f "${HOME}/.ssh/config" ] && ! [ -L "${HOME}/.ssh/config" ]; }; then
+  echo 'Backup existing ssh configuration'
+  mv "${HOME}/.ssh/config" "${HOME}/.ssh/config.bak"
 fi
-ln -s "${HOME}/.dotfiles/ssh/config" "${HOME}/.ssh/config"
+
+echo 'Symlink ssh configuration'
+ln -sf "${HOME}/.dotfiles/ssh/config" "${HOME}/.ssh/config"
 chmod 600 "${HOME}/.ssh/config"

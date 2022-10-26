@@ -1,35 +1,11 @@
 #!/bin/bash
 
+brew_packages='iterm2 rectangle clipy'
+
 # -----------------------------------------------
 # Applications
 # -----------------------------------------------
 
-echo 'Installing iTerm2'
-brew install --cask iterm2
-
-echo 'Installing Firefox'
-brew install --cask firefox
-
-echo 'Installing Spotify'
-brew install --cask spotify
-
-echo 'Installing Visual Studio Code'
-brew install --cask visual-studio-code
-
-echo 'Installing PhpStorm'
-brew install --cask phpstorm
-
-echo 'Installing Cyberduck'
-brew install --cask cyberduck
-
-echo 'Installing Rectangle'
-brew install --cask rectangle
-
-echo 'Installing Clipy'
-brew install --cask clipy
-
-echo 'Installing Sensible Side Buttons'
-brew install --cask sensiblesidebuttons
-
-echo 'Installing SmoothScroll'
-brew install --cask smoothscroll
+echo 'Installing applications'
+# shellcheck disable=SC2086
+brew install ${brew_packages}

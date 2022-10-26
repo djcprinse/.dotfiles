@@ -4,16 +4,16 @@
 # Configure basic .gitignore and config
 # ---------------------------------------------
 
-if [ -f "${HOME}/.gitignore" ]; then
-  echo 'Rename existing .gitignore to .gitignore.bak'
+if [ -d "${HOME}/.gitignore" ] || { [ -f "${HOME}/.gitignore" ] && ! [ -L "${HOME}/.gitignore" ]; }; then
+  echo 'Backup existing .gitignore to .gitignore.bak'
   mv "${HOME}/.gitignore" "${HOME}/.gitignore.bak"
 fi
 
 echo 'Symlink global .gitignore'
-ln -s "${HOME}/.dotfiles/git/.gitignore" "${HOME}/.gitignore"
+ln -sf "${HOME}/.dotfiles/git/.gitignore" "${HOME}/.gitignore"
 
-if [ -f "${HOME}/.gitconfig" ]; then
-  echo 'Rename existing .gitconfig to .gitconfig.bak'
+if [ -d "${HOME}/.gitconfig" ] || { [ -f "${HOME}/.gitconfig" ] && ! [ -L "${HOME}/.gitconfig" ]; }; then
+  echo 'Backup existing .gitconfig to .gitconfig.bak'
   mv "${HOME}/.gitconfig" "${HOME}/.gitconfig.bak"
 fi
 

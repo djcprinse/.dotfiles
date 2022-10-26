@@ -7,21 +7,28 @@ echo '########################'
 echo '### fedora bootstrap ###'
 echo '########################'
 
-"${script_dir}/generic/terminal.sh"
-"${script_dir}/generic/ssh.sh"
-"${script_dir}/generic/git.sh"
+install_script() {
+  while true; do
+    read -rp "Do you want to install ${1}? (y/n) [y]? " yn
+    yn=${yn:-'y'}
+    case ${yn} in
+      [Yy]*)
+        ${2}
+        break
+        ;;
+      [Nn]*)
+        break
+        ;;
+      *) echo "Please answer yes or no (y/n)." ;;
+    esac
+  done
+}
 
-read -r -p 'Do you want to install development tools? (y/n) [y]? ' CONT
-CONT=${CONT:-'y'}
-if [[ "${CONT}" = 'y' ]]; then
-  "${script_dir}/fedora/development-tools.sh"
-fi
-
-read -r -p 'Do you want to install applications? (y/n) [y]? ' CONT
-CONT=${CONT:-'y'}
-if [[ "${CONT}" = 'y' ]]; then
-  "${script_dir}/fedora/applications.sh"
-fi
+install_script 'development tools' "${script_dir}/fedora/development-tools.sh"
+install_script 'zsh terminal' "${script_dir}/generic/terminal.sh"
+install_script 'ssh configuration' "${script_dir}/generic/ssh.sh"
+install_script 'git configuration' "${script_dir}/generic/git.sh"
+install_script 'applications' "${script_dir}/fedora/applications.sh"
 
 echo '########################'
 echo 'Ready setting up fedora!'

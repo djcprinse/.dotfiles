@@ -8,24 +8,27 @@ zsh_cache_dir="${HOME}/.cache/zsh"
 # Terminal
 # -----------------------------------------------
 
-echo 'Hide "last login" line when starting a new terminal session.'
-touch "${HOME}/.hushlogin"
+if [ ! -f "${HOME}/.hushlogin" ]; then
+  echo 'Hide "last login" line when starting a new terminal session.'
+  touch "${HOME}/.hushlogin"
+fi
 
-echo 'Create zsh directories'
-if [ -d "${zsh_config_dir}" ]; then
+if [ ! -d "${zsh_config_dir}" ]; then
+  echo 'Create zsh config directory'
   mkdir -p "${zsh_config_dir}"
 fi
 
-if [ -d "${zsh_cache_dir}" ]; then
+if [ ! -d "${zsh_cache_dir}" ]; then
+  echo 'Create zsh cache directory'
   mkdir -p "${zsh_cache_dir}"
 fi
 
-echo 'Installing oh-my-zsh'
 if [ -d "${zsh_config_dir}/.oh-my-zsh" ]; then
   echo 'Removing existing oh-my-zsh installation before proceeding'
   rm -rf "${zsh_config_dir}/.oh-my-zsh"
 fi
 
+echo 'Installing oh-my-zsh'
 curl -fsSLo "${script_dir}/install.sh" https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 ZSH=${zsh_config_dir}/.oh-my-zsh sh "${script_dir}/install.sh" --unattended
 rm "${script_dir}/install.sh"
@@ -41,9 +44,10 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "${ZSH_
 # Configure zsh
 # ---------------------------------------------
 
-echo 'Symlink .zshenv'
-if [ -f "${HOME}/.zshenv" ]; then
-  rm "${HOME}/.zshenv"
+if [ -d "${HOME}/.zshenv" ] || { [ -f "${HOME}/.zshenv" ] && ! [ -L "${HOME}/.zshenv" ]; }; then
+  echo 'Backup existing .zshenv to .zshenv.bak'
+  mv "${HOME}/.zshenv" "${HOME}/.zshenv.bak"
 fi
 
-ln -s "${HOME}/.dotfiles/zsh/.zshenv" "${HOME}/.zshenv"
+echo 'Symlink .zshenv'
+ln -sf "${HOME}/.dotfiles/zsh/.zshenv" "${HOME}/.zshenv"
