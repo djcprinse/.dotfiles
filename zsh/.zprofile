@@ -9,11 +9,10 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Add all local binaries to the system path.
 export PATH="${PATH}:${HOME}/bin"
-export PATH="${PATH}:${HOME}/.composer/vendor/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:/usr/local/opt/openssl/bin"
-export PATH="${PATH}:/usr/local/bin/pstorm"
+export PATH="${PATH}:/usr/local/opt/unzip/bin"
 
 # Set vim as default editor
 export EDITOR="vim"
