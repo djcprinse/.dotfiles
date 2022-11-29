@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt_packages='curl git iproute2 tmux vim-gtk zsh'
+apt_packages='curl git iproute2 screen tmux vim-gtk zsh'
 apt_packages_optional='htop jq rsync shellcheck unzip'
 
 # -----------------------------------------------

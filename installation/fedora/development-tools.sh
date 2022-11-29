@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dnf_packages='util-linux-user curl git iproute2 tmux vim-gtk zsh'
+dnf_packages='util-linux-user curl git iproute2 screen tmux vim-gtk zsh'
 dnf_packages_optional='htop jq rsync shellcheck unzip'
 
 # -----------------------------------------------

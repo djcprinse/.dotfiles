@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew_packages='diffutils curl git tmux vim zsh'
+brew_packages='diffutils curl git screen tmux vim zsh'
 brew_packages_optional='htop jq rsync shellcheck unzip openssl'
 
 # -----------------------------------------------
