@@ -3,7 +3,9 @@ ZSH_CUSTOM="${ZSH}/custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_COMPDUMP=${XDG_CACHE_HOME}/zsh/.zcompdump-${ZSH_VERSION}
 
-plugins=(brew composer docker docker-compose git macos node npm rsync sudo tmux zsh-completions zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
+plugins+=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
+plugins+=(git man rsync screen sudo tmux)
+plugins+=(brew macos)
 
 source "${ZSH}/oh-my-zsh.sh"
 
