@@ -3,9 +3,11 @@ ZSH_CUSTOM="${ZSH}/custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_COMPDUMP=${XDG_CACHE_HOME}/zsh/.zcompdump-${ZSH_VERSION}
 
-plugins+=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
-plugins+=(git man rsync screen sudo tmux)
-plugins+=(brew macos)
+plugins+=(zsh-autosuggestions zsh-completions zsh-interactive-cd zsh-syntax-highlighting)
+plugins+=(common-aliases copypath dirhistory git history history-substring-search man rsync screen ssh-agent sudo tmux z)
+plugins+=(macos brew)
+plugins+=(debian)
+plugins+=(dnf yum)
 
 source "${ZSH}/oh-my-zsh.sh"
 
