@@ -11,6 +11,10 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 export PATH="${PATH}:${HOME}/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:/usr/local/sbin"
+export PATH="${PATH}:/opt/homebrew/bin"
+export PATH="${PATH}:/opt/homebrew/sbin"
+export PATH="${PATH}:/opt/homebrew/opt"
+# TODO remove legacy Homebrew paths
 export PATH="${PATH}:/usr/local/opt/openssl/bin"
 export PATH="${PATH}:/usr/local/opt/unzip/bin"
 
