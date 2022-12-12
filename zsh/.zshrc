@@ -3,7 +3,9 @@ ZSH_CUSTOM="${ZSH}/custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_COMPDUMP=${XDG_CACHE_HOME}/zsh/.zcompdump-${ZSH_VERSION}
 
-plugins+=(zsh-autosuggestions zsh-completions zsh-interactive-cd zsh-syntax-highlighting)
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 plugins+=(common-aliases copypath dirhistory git history history-substring-search man rsync screen ssh-agent sudo tmux z)
 plugins+=(macos brew)
 plugins+=(debian)
