@@ -8,15 +8,11 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Add all local binaries to the system path.
-export PATH="${PATH}:${HOME}/bin"
-export PATH="${PATH}:${HOME}/.local/bin"
-export PATH="${PATH}:/usr/local/sbin"
-export PATH="${PATH}:/opt/homebrew/bin"
-export PATH="${PATH}:/opt/homebrew/sbin"
-export PATH="${PATH}:/opt/homebrew/opt"
-# TODO remove legacy Homebrew paths
-export PATH="${PATH}:/usr/local/opt/openssl/bin"
-export PATH="${PATH}:/usr/local/opt/unzip/bin"
+export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
+export PATH="/opt/homebrew/bin:${PATH}"
+export PATH="/opt/homebrew/sbin:${PATH}"
 
 # Set vim as default editor
 export EDITOR="vim"
