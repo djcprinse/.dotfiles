@@ -16,6 +16,7 @@ export PATH="/opt/homebrew/sbin:${PATH}"
 
 # Set vim as default editor
 export EDITOR="vim"
+export VIMINIT="set nocp | source ${XDG_CONFIG_HOME}/vim/vimrc"
 
 # Prefer GB English and use UTF-8
 export LANG="en_GB.UTF-8"
