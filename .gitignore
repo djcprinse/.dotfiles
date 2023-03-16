@@ -19,6 +19,8 @@
 /vim/*
 !/vim/vimrc
 
+!/zsh
+/zsh/*
 !/zsh/.aliases
 !/zsh/.exports
 !/zsh/.zprofile
