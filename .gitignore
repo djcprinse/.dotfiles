@@ -11,8 +11,6 @@
 !/installation/generic/*.sh
 !/installation/macos/*.sh
 
-!/iterm/com.googlecode.iterm2.plist
-
 !/ssh/config
 
 !/vim
