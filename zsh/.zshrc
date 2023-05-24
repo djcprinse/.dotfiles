@@ -11,6 +11,17 @@ plugins+=(macos brew)
 plugins+=(debian)
 plugins+=(dnf yum)
 
+# Load the custom dotfiles zshrc files if available
+for dir in ${HOME}/.dotfiles-*/; do
+    # remove the trailing "/"
+    dir=${dir%*/}
+
+    for file in ${dir}/zsh/.{zshrc}; do
+        [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
+    done
+done
+unset file
+
 source "${ZSH}/oh-my-zsh.sh"
 
 # Load the shell dotfiles, and then custom dotfiles if available
@@ -18,12 +29,13 @@ source "${ZSH}/oh-my-zsh.sh"
 for file in ${HOME}/.dotfiles/zsh/.{exports,aliases}; do
     [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done
+unset file
 
 for dir in ${HOME}/.dotfiles-*/; do
     # remove the trailing "/"
     dir=${dir%*/}
 
-    for file in ${dir}/zsh/.{exports,aliases,zshrc}; do
+    for file in ${dir}/zsh/.{exports,aliases}; do
         [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
     done
 done
