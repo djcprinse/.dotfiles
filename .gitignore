@@ -6,19 +6,21 @@
 
 !/installation
 !/installation/*.sh
+!/installation/debian
 !/installation/debian/*.sh
+!/installation/fedora
 !/installation/fedora/*.sh
+!/installation/generic
 !/installation/generic/*.sh
+!/installation/macos
 !/installation/macos/*.sh
 
 !/ssh/config
 
 !/vim
-/vim/*
 !/vim/vimrc
 
 !/zsh
-/zsh/*
 !/zsh/.aliases
 !/zsh/.exports
 !/zsh/.zprofile
