@@ -35,6 +35,7 @@ rm "${script_dir}/install.sh"
 
 echo 'Installing oh-my-zsh plugins'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-${zsh_config_dir}/.oh-my-zsh/custom}/themes/powerlevel10k"
+git clone --depth=1 https://github.com/TamCore/autoupdate-oh-my-zsh-plugins "${ZSH_CUSTOM:-${zsh_config_dir}/.oh-my-zsh/custom}/plugins/autoupdate"
 git clone --depth=1 https://github.com/zsh-users/zsh-completions "${ZSH_CUSTOM:-${zsh_config_dir}/.oh-my-zsh/custom}/plugins/zsh-completions"
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-${zsh_config_dir}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "${ZSH_CUSTOM:-${zsh_config_dir}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
