@@ -23,7 +23,7 @@ for dir in ${HOME}/.dotfiles-*/; do
     # remove the trailing "/"
     dir=${dir%*/}
 
-    for file in ${dir}/zsh/.{zshrc}; do
+    for file in ${dir}/zsh/.zshrc; do
         [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
     done
 done
