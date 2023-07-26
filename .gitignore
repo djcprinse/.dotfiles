@@ -6,6 +6,8 @@
 
 !/installation
 !/installation/*.sh
+!/installation/arch
+!/installation/arch/*.sh
 !/installation/debian
 !/installation/debian/*.sh
 !/installation/fedora

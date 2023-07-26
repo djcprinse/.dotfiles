@@ -12,7 +12,11 @@ install() {
       echo
       echo 'Linux detected. Right now, Linux supported is minimal for automated bootstrap.'
 
-      if [ "$(grep -Ei 'redhat|fedora' /etc/*release)" ]; then
+      if [ "$(grep -Ei 'arch' /etc/*release)" ]; then
+        echo
+        echo 'arch based distribution detected.'
+        "${script_dir}/bootstrap-arch.sh"
+      elif [ "$(grep -Ei 'redhat|fedora' /etc/*release)" ]; then
         echo
         echo 'fedora based distribution detected.'
         "${script_dir}/bootstrap-fedora.sh"
