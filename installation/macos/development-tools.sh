@@ -6,7 +6,7 @@ brew_packages_bsd_counterparts='coreutils binutils diffutils ed findutils gawk g
 brew_packages_bsd_outdated='flex'
 brew_packages_gnu_outdated='bash emacs gpatch less m4 make nano bison'
 brew_packages_gnu_preferred='libressl file-formula git openssh perl python rsync unzip vim'
-brew_packages_optional='htop jq shellcheck openssl'
+brew_packages_optional='htop jq yq shellcheck openssl'
 
 # -----------------------------------------------
 # Programming Languages, Frameworks and CLI tools
