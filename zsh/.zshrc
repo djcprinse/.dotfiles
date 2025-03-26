@@ -18,6 +18,13 @@ plugins+=(macos brew)
 plugins+=(debian)
 plugins+=(dnf yum)
 
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX=$(brew --prefix)
+  # gnubin; gnuman
+  for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
+  for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
+fi
+
 # Load the custom dotfiles zshrc files if available
 for dir in ${HOME}/.dotfiles-*/; do
     # remove the trailing "/"
