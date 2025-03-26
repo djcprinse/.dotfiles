@@ -13,7 +13,7 @@ ZSH_COMPDUMP=${XDG_CACHE_HOME}/zsh/.zcompdump-${ZSH_VERSION}
 fpath+=${ZSH_CUSTOM:-${ZSH:-${HOME}/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 plugins+=(autoupdate zsh-autosuggestions zsh-syntax-highlighting)
-plugins+=(copypath dirhistory git history history-substring-search man rsync screen ssh-agent sudo tmux z)
+plugins+=(copypath git history history-substring-search man rsync screen ssh-agent sudo tmux z)
 plugins+=(macos brew)
 plugins+=(debian)
 plugins+=(dnf yum)
